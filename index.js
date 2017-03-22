@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const routes = require('./config/routes');
+// const routes = require('./config/routes');
 const app     = express();
 const dest    = `${__dirname}/public`;
 const config = require('./config/config');
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(dest));
 
 app.use(morgan('dev'));
-app.use('/api', routes);
+// app.use('/api', routes);
 
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
